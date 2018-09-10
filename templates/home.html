@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Leilão</title>
+</head>
+<body>
+<div align='center' style="background-color: yellow">
+<img src="https://negocioonlineja.com/wp-content/uploads/2018/02/Mercado-Livre-logo-1.png" height="100" width="150">
+</div>
+<div style="font-family: Arial Narrow">
+<h1>Lista de Produtos:</h1>
+<ul>
+	{% for produto in produtos %}
+		<li><h2>{{produto.nome}}</h2></li>
+		<h3>{{produto.descricao}}</h3>
+	{% endfor %}
+</ul>
+{%if user.is_authenticated %}
+    <button onclick="location.href='accounts/logout/';">Sair</button>
+    <button onclick="location.href='cadastro-produto/';">Cadastrar Produto</button>
+{%else%}
+    <button onclick="location.href='cadastro/';">Cadastrar-se</button>
+    <button onclick="location.href='accounts/login/';">Login</button>
+{%endif%}
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Leilão</title>
+</head>
+<body>
+  <div style= "width: 300px; text-align: center;">
+      <h1>Cadastro de Produto</h1>
+      <form method="POST">
+       {% csrf_token %}
+       <input name="user" value="{{request.user.pk}}" hidden>
+       {{form.as_p}}
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+</body>
+</html>
