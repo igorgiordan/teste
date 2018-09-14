@@ -15,7 +15,6 @@ class Produto(models.Model):
     descricao = models.TextField(verbose_name='Descrição')
     datafim = models.DateField(auto_now=False, verbose_name='Data final')
     lancemin = models.FloatField(default=0, verbose_name='lance mínimo')
-    ofertamax = models.FloatField(default=0, verbose_name='oferta_max')
 
     def __str__(self):
      return self.nome

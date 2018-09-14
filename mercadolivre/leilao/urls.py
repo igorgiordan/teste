@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
 
+app_name='mercadolivre'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

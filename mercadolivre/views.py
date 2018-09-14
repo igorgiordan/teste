@@ -36,3 +36,7 @@ class Home(ListView):
         kwargs['produtos'] = models.Produto.objects.all()
         print ( kwargs['produtos'])
         return super(Home, self).get_context_data(**kwargs)
+
+class ExibirProduto(DetailView):
+    model = models.Produto
+    template_name = 'produto.html'

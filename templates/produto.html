@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Leilão</title>
+</head>
+<body>
+<div align='center' style="background-color: yellow">
+<img src="https://negocioonlineja.com/wp-content/uploads/2018/02/Mercado-Livre-logo-1.png" height="100" width="150">
+</div>
+<div style="font-family: Arial Narrow; color: blue;" text-align='center' align='center'>
+<a href="{% url 'mercadolivre:home'%}">Voltar</a>
+<div style="background-color: yellow">
+<h1 style="color: #00008B;">{{object.nome}}</h1>
+</div>
+<h2>{{object.descricao}}</h2>
+<h2>Data Final: {{object.datafim}}</h2>
+<h2>Lance mínimo: R${{object.lancemin}}</h2>
+</div>
+</body>
+</html>

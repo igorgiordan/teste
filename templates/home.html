@@ -8,14 +8,13 @@
 <div align='center' style="background-color: yellow">
 <img src="https://negocioonlineja.com/wp-content/uploads/2018/02/Mercado-Livre-logo-1.png" height="100" width="150">
 </div>
-<div style="font-family: Arial Narrow">
+<div style="font-family: Arial Narrow" align='center'>
 <h1>Lista de Produtos:</h1>
-<ul>
 	{% for produto in produtos %}
-		<li><h2>{{produto.nome}}</h2></li>
-		<h3>{{produto.descricao}}</h3>
+	<div style="background-color: yellow; width: 120px; height: 40px; box-shadow: 5px -9px 3px #00008B;">
+		<h2 style="color: #00008B;"><a href="{% url 'mercadolivre:exibir-produto' produto.pk %}">{{produto.nome}}</a></h2>
+	</div>
 	{% endfor %}
-</ul>
 {%if user.is_authenticated %}
     <button onclick="location.href='accounts/logout/';">Sair</button>
     <button onclick="location.href='cadastro-produto/';">Cadastrar Produto</button>
