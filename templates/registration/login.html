@@ -5,13 +5,17 @@
 	<title>Login</title>
 </head>
 <body>
-	<div style= "width: 300px; text-align: center;">
+  <div align='center' style="background-color: yellow">
+    <img src="https://negocioonlineja.com/wp-content/uploads/2018/02/Mercado-Livre-logo-1.png" height="100" width="150">
+  </div>
+	<div style= "width: 300px; text-align: center; font-family: Arial Narrow; margin: 0 auto;">
+      <a href="{% url 'mercadolivre:home'%}">Voltar</a>
       <h1>Login</h1>
       <form method="POST">
        {% csrf_token %}
        {{form.as_p}}
       <button type="submit">Login</button>
     </form>
-
+    </div>
 </body>
 </html>

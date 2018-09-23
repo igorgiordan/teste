@@ -5,7 +5,13 @@
   <title>Leilão</title>
 </head>
 <body>
-  <div style= "width: 300px; text-align: center;">
+  <div align='center' style="background-color: yellow">
+      <img src="https://negocioonlineja.com/wp-content/uploads/2018/02/Mercado-Livre-logo-1.png" height="100" width="150">
+  </div>
+  <div style= "font-family: Arial Narrow;">
+  <div align='center'>
+  <a href="{% url 'mercadolivre:home'%}">Voltar</a>
+  </div>
       <h1>Cadastro de Usuario</h1>
       <form method="POST">
        {% csrf_token %}

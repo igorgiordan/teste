@@ -16,6 +16,18 @@
 <h2>{{object.descricao}}</h2>
 <h2>Data Final: {{object.datafim}}</h2>
 <h2>Lance mínimo: R${{object.lancemin}}</h2>
+<h2>Maior oferta: R${{maximo}}</h2>
+<h3><i>Só serão computadas ofertas maiores que a maior oferta!!!</i></h3>
+{%if user.username == object.user.username%}
+<br>
+{%else%}
+<form method='GET'>
+	<label>Digite sua oferta:</label>
+	<input type='text' name='oferta'>
+	<button type='submit'>Dar lance</button>
+{%endif%}
+</form>
+<a href="{% url 'mercadolivre:lances' object.pk%}" >Lances</a>
 </div>
 </body>
 </html>

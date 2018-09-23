@@ -10,14 +10,25 @@
 </div>
 <div style="font-family: Arial Narrow" align='center'>
 <h1>Lista de Produtos:</h1>
+	{%if user.is_authenticated %}
 	{% for produto in produtos %}
 	<div style="background-color: yellow; width: 120px; height: 40px; box-shadow: 5px -9px 3px #00008B;">
 		<h2 style="color: #00008B;"><a href="{% url 'mercadolivre:exibir-produto' produto.pk %}">{{produto.nome}}</a></h2>
 	</div>
+	<br>
 	{% endfor %}
+	{%else%}
+	{% for produto in produtos %}
+	<div style="background-color: yellow; width: 120px; height: 40px; box-shadow: 5px -9px 3px #00008B;">
+		<h2 style="color: #00008B;">{{produto.nome}}</h2>
+	</div>
+	<br>
+	{% endfor %}
+	{%endif%}
 {%if user.is_authenticated %}
     <button onclick="location.href='accounts/logout/';">Sair</button>
-    <button onclick="location.href='cadastro-produto/';">Cadastrar Produto</button>
+	<button onclick="location.href='cadastro-produto/';">Cadastrar Produto</button>
+	<button onclick="location.href='comprados/';">Produtos comprados</button>
 {%else%}
     <button onclick="location.href='cadastro/';">Cadastrar-se</button>
     <button onclick="location.href='accounts/login/';">Login</button>

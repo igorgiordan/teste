@@ -10,11 +10,16 @@ now = datetime.now()
 #Oferta
 
 class Produto(models.Model):
+    kindchoice = (
+        (1, 'Ativo'),
+        (2, 'Não ativo')
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user1', verbose_name='user')
     nome = models.CharField(max_length=150, verbose_name='nome')
     descricao = models.TextField(verbose_name='Descrição')
     datafim = models.DateField(auto_now=False, verbose_name='Data final')
     lancemin = models.FloatField(default=0, verbose_name='lance mínimo')
+    status = models.IntegerField(choices=kindchoice, verbose_name="tipo", default=1)
 
     def __str__(self):
      return self.nome
@@ -29,7 +34,7 @@ class Oferta(models.Model):
     oferta = models.FloatField(default=0, verbose_name='oferta')
 
     def __str__(self):
-     return self.leilao
+     return "Oferta"
     
     class Meta:
         verbose_name = 'oferta'
