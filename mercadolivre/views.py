@@ -28,6 +28,11 @@ class CreateProduto(CreateView):
         obj.user = models.User.objects.get(id=self.request.user.pk)
         obj.save()
         return HttpResponseRedirect('/')
+    def get_context_data(self, **kwargs):
+        data = date.today()
+        data2 = date.fromordinal(data.toordinal()+1)
+        kwargs['data'] = str(data2)
+        return super(CreateProduto, self).get_context_data(**kwargs)
 
 class Home(ListView):
     model = models.Produto

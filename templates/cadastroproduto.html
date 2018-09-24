@@ -41,7 +41,13 @@
       <form method="POST">
        {% csrf_token %}
        <input name="user" value="{{request.user.pk}}" hidden>
-       {{form.as_p}}
+       <input type="hidden" name="csrfmiddlewaretoken" value="c4LrJ4GyvllCOPLGBYn9kuPxMWpq6YFeyITn6RMLLHUN07zBYtjuh82mfLu6Ndtr">
+       <input name="user" value="2" hidden>
+       <p><label for="id_nome">Nome:</label> <input type="text" name="nome" maxlength="150" required id="id_nome"></p>
+  <p><label for="id_descricao">Descrição:</label> <textarea name="descricao" cols="40" rows="10" required id="id_descricao">
+  </textarea></p>
+  <p><label for="id_datafim">Datafim:</label> <input type="date" min={{data}} name="datafim" class="vDateField" size="10" required id="id_datafim"></p>
+  <p><label for="id_lancemin">Lance mínimo:</label> <input type="number" name="lancemin" value="0" step="any" required id="id_lancemin"></p>
       <button type="submit">Cadastrar</button>
     </form>
   </div>
